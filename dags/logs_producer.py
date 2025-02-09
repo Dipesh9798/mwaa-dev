@@ -84,7 +84,7 @@ def produce_logs(**context):
     producer = create_kafka_producer(kafka_config)
     topic = 'billion_website_logs'
 
-    for i in range(100):
+    for i in range(15000):
         log = generate_log()
         try:
             producer.produce(topic, log.encode('utf-8'), on_delivery= delivery_report)
@@ -93,7 +93,7 @@ def produce_logs(**context):
             logger.error(f'Error producing log: {e}')
             raise
 
-    logger.info(f'Produced 100 logs to topic {topic}')
+    logger.info(f'Produced 15000 logs to topic {topic}')
 
 
 default_args = {

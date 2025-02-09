@@ -96,7 +96,7 @@ def consume_and_index_logs(**Context):
                 logs.append(parsed_log)
 
             #index when 15000 logs are parsed
-            if len(logs) >= 50:
+            if len(logs) >= 15000:
                 print('Indexing logs')
                 actions = [
                     {
